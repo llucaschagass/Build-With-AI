@@ -1,26 +1,27 @@
-# 🚀 Build with AI: Brand Monitoring Challenge
+# 🚀 Construindo com IA: Desafio de Monitoramento de Marca
 
-Welcome to the Brand Monitoring Challenge for our Build with AI workshop! In this exercise you’ll use the ADK (and optionally MCP) to build an end-to-end agent that:
+Bem-vindo ao Desafio de Monitoramento de Marca do nosso workshop Construindo com IA! Neste exercício, você usará o ADK (e opcionalmente o MCP) para criar um agente de ponta a ponta que:
 
-1. **Ingests** mentions of a brand from multiple sources (Reddit, Twitter, News APIs, general web).
-2. **Analyzes** what people are saying—sentiment, key topics, issue detection.
-3. **Generates** a consolidated report highlighting the brand’s current public perception and areas of concern.
+1. **Ingere** menções de uma marca de múltiplas fontes (Reddit, Twitter, APIs de notícias, web em geral).
+2. **Analisa** o que as pessoas estão dizendo — sentimento, tópicos principais, detecção de problemas.
+3. **Gera** um relatório consolidado destacando a percepção pública atual da marca e áreas de preocupação.
 
 ---
 
-## 🛠 Workshop Tools & Prerequisites
 
-- **Agent Development Kit (ADK)**
-  Tool for defining your agent, tools, and function calls.
+## 🛠 Ferramentas & Pré-requisitos do Workshop
 
-- **MCP (Model Context Protocol)** _(optional)_
-  You’ll be given MCP credentials to connect. If your quota runs out, feel free to roll your own connectors or use plain function-calling.
+- **Kit de Desenvolvimento de Agentes (ADK)**
+  Ferramenta para definir seu agente, ferramentas e chamadas de função.
+
+- **MCP (Model Context Protocol)** _(opcional)_
+  Você receberá credenciais do MCP para se conectar. Se sua cota acabar, fique à vontade para criar seus próprios conectores ou usar chamadas diretas de função.
 
 - **Gemini**
-  The LLM you’ll use for analysis and report generation.
+  O LLM que você usará para análise e geração de relatórios.
 
-- **Dependencies**
-  Install all required packages from the provided `requirements.txt`:
+- **Dependências**
+  Instale todos os pacotes necessários a partir do `requirements.txt` fornecido:
 
   ```bash
   pip install -r requirements.txt
@@ -28,116 +29,109 @@ Welcome to the Brand Monitoring Challenge for our Build with AI workshop! In thi
 
 ---
 
-## 🚦 Challenge Statement
+## 🚦 Enunciado do Desafio
 
-> **Given** the name of a brand (user input),
-> **Build** an AI agent that:
-> 1. Queries **at least three** data sources (e.g., Reddit, Twitter, News API, Web Scraper).
-> 2. Performs **sentiment analysis**, **topic extraction**, and **issue detection** on the collected mentions.
-> 3. Outputs a structured **Brand Monitoring Report** (see “Expected Output” below).
+> **Dado** o nome de uma marca (entrada do usuário),
+> **Construa** um agente de IA que:
+> 1. Consulte **ao menos três** fontes de dados (ex.: Reddit, Twitter, API de Notícias, Web Scraper).
+> 2. Realize **análise de sentimento**, **extração de tópicos** e **detecção de problemas** nas menções coletadas.
+> 3. Produza um **Relatório de Monitoramento de Marca** estruturado (veja “Saída Esperada” abaixo).
 
 ---
 
-## 📥 Inputs
+## 📥 Entradas
 
 - `company_name` (string)
-  e.g. `"Acme Co."`
+  ex.: `"Acme Co."`
 
 
 ---
 
-## 📈 Expected Output
+## 📈 Saída Esperada
 
-Your agent should return a or Markdown report containing:
+Seu agente deve retornar um relatório Markdown contendo:
 
-1. **Executive Summary**
-   A 2–3 sentence overview of overall sentiment and top concerns.
+1. **Resumo Executivo**
+   Uma visão geral em 2–3 frases sobre o sentimento geral e as principais preocupações.
 
-2. **Sentiment Breakdown**
-   Percentage of positive / neutral / negative mentions, **by source**.
+2. **Distribuição de Sentimentos**
+   Percentual de menções positivas / neutras / negativas, **por fonte**.
 
-3. **Top 5 Topics & Issues**
-   Most frequently discussed themes (e.g., “shipping delays,” “customer support”).
+3. **Top 5 Tópicos & Problemas**
+   Temas mais discutidos com frequência (ex.: “atrasos na entrega”, “suporte ao cliente”).
 
-4. **Trend Analysis**
-   Simple time-series summary (mentions per day), highlighting peaks.
+4. **Análise de Tendência**
+   Resumo simples em série temporal (menções por dia), destacando os picos.
 
-5. **Sample Mentions**
-   2–3 representative quotes (with source name and link) for each sentiment category.
+5. **Menções Exemplares**
+   2–3 citações representativas (com nome da fonte e link) para cada categoria de sentimento.
 
-6. **Recommendations**
-   Based on detected issues, suggest 2–3 actionable next steps.
-
----
-
-## 🏗 Your Tasks
-
-1. **Configure Connectors**
-   - Use MCP with provided credentials, *or* implement your own via function calls/web scraping.
-
-2. **Define Agent & Tools in ADK**
-   - Declare functions for data ingestion, analysis, and report generation.
-
-3. **Implement Analysis Pipeline**
-   - Ingest raw mentions → clean/filter/summarize → generate report.
-
-4. **Generate Report**
-   - Get the results into the Markdown structure above.
-
-5. **Run Your Solution**
-   - Run your solution with **two** different brand names.
+6. **Recomendações**
+   Com base nos problemas detectados, sugira 2–3 próximos passos acionáveis.
 
 ---
 
-## 📝 Submission (Suggested)
+## 🏗 Suas Tarefas
 
-- **GitHub Repo** containing:
+1. **Configurar Conectores**
+   - Use o MCP com as credenciais fornecidas, *ou* implemente seus próprios conectores via chamadas de função/web scraping.
+
+2. **Definir Agente & Ferramentas no ADK**
+   - Declare funções para ingestão de dados, análise e geração de relatório.
+
+3. **Implementar Pipeline de Análise**
+   - Ingerir menções brutas → limpar/filtrar/resumir → gerar report.
+
+4. **Gerar Relatório**
+   - Obter resultados na estrutura Markdown acima.
+
+5. **Teste sua Solução**
+   - Teste sua solução com pelo menos **duas** marcas diferentes.
+
+---
+
+## 📝 Submissão (Sugerido)
+
+- **Repositório no GitHub** contendo:
   - `README.md`
-  - Source code for your agent
+  - Código-fonte do seu agente
   - `requirements.txt`
-  - Example outputs for at least two brands
+  - Exemplos de saída para pelo menos duas marcas
 
-
-- **Evaluation Criteria** (for your reference):
-  1. **Data Coverage**: ≥3 sources ingested.
-  2. **Report Quality**: Clarity, completeness, structure.
-  3. **Tooling**: Correct use of ADK functions (and MCP if used).
-  4. **Code Quality**: Readable, modular, documented.
-
----
+- **Critérios de Avaliação** (para sua referência):
+  1. **Cobertura de Dados**: ≥3 fontes ingeridas.
+  2. **Qualidade do Relatório**: Clareza, completude, estrutura.
+  3. **Ferramentas**: Uso correto das funções do ADK (e do MCP, se utilizado).
+  4. **Qualidade do Código**: Legível, modular, documentado.
 
 # Setup
 
-## Setup Instructions
+## Instruções de Configuração
 
-- **Gemini API key**
-  Access google: http://aistudio.google.com/
-
-  Login with your google account.
-
-  Create an api key.
-
-  Create a file named `.env`.
-
-  Add the variable GOOGLE_API_KEY with the value of the api key from ai studio
+- **Chave de API do Gemini**
+  Acesse o Google: http://aistudio.google.com/
+  Faça login com sua conta Google.
+  Crie uma chave de API.
+  Crie um arquivo chamado `.env`.
+  Adicione a variável `GOOGLE_API_KEY` com o valor da chave de API do AI Studio.
 
 ## ADK
 
-Open UI:
+Abra a UI:
 
 ```
 adk web
 ```
 
-Run the agent as a service:
+Execute o agente como serviço:
 
 ```
 adk api_server
 ```
 
-## Local MCP
+## MCP Local
 
-to run the local MCP, make sure you have the correct credentials in your .env file
+Para executar o MCP local, certifique-se de ter as credenciais corretas no seu arquivo `.env`:
 
 ```
 cd 06_challenge/mcp/
@@ -146,29 +140,32 @@ uvicorn src.api:app --host 0.0.0.0 --port 8001 --reload
 
 ## Credentials Websites
 
-### 🛠️ Reddit Credentials
-**Website:** [reddit.com/prefs/apps](https://www.reddit.com/prefs/apps)
-**What you’ll need:**
-- **Client ID** (aka “App ID”)
+## 🛠️ Credenciais do Reddit
+**Site:** [reddit.com/prefs/apps](https://www.reddit.com/prefs/apps)
+**O que você vai precisar:**
+- **Client ID** (ou “App ID”)
 - **Client Secret**
-- **User Agent** (e.g. `my-app/0.1 by your_username`)
+- **User Agent** (ex.: `my-app/0.1 by seu_usuario`)
 
 ---
 
-### 🐦 Twitter Credentials
-**Website:** [developer.twitter.com/en/portal/dashboard](https://developer.twitter.com/en/portal/dashboard)
-**What you’ll need:**
+## 🐦 Credenciais do Twitter
+**Site:** [developer.twitter.com/en/portal/dashboard](https://developer.twitter.com/en/portal/dashboard)
+**O que você vai precisar:**
 - **Bearer Token**
 
 ---
 
-### 🗞️ News API (Tavily)
-**Website:** [tavily.com](https://tavily.com/)
-**What you’ll need:**
+## 🗞️ News API (Tavily)
+**Site:** [tavily.com](https://tavily.com/)
+**O que você vai precisar:**
 - **API Key**
 
 ---
 
-Just head to each link, follow their “Create new app” or “Get API key” flows, and then stash these values safely—your code will thank you! 🎉
+Basta acessar cada link, seguir o fluxo de “Criar novo app” ou “Obter chave de API” e guardar esses valores com segurança — seu código vai agradecer! 🎉
 
-Good luck, and happy building! 🌟
+
+---
+
+Boa sorte e bom desenvolvimento! 🌟

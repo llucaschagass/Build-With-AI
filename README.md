@@ -167,5 +167,3 @@ Basta acessar cada link, seguir o fluxo de “Criar novo app” ou “Obter chav
 
 
 ---
-
-Boa sorte e bom desenvolvimento! 🌟
